@@ -1,0 +1,38 @@
+[build]
+  # Répertoire à publier (où se trouvent vos fichiers HTML, CSS, JS)
+  publish = "."
+  
+  # Commande de construction (pas nécessaire pour un site statique simple)
+  command = ""
+
+[context.production]
+  # Branche à déployer pour la production
+  branch = "main"
+
+[context.deploy-preview]
+  # Configuration pour les previews de déploiement
+  command = ""
+
+[build.environment]
+  # Variables d'environnement pour la construction
+  NODE_VERSION = "16"
+
+[functions]
+  # Répertoire des fonctions serverless (si vous en avez)
+  directory = "functions"
+
+[[redirects]]
+  # Redirection par défaut pour le SPA (Single Page Application)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # En-têtes de sécurité recommandés
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' https: data:; font-src 'self' https: data:;" 
