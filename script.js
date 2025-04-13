@@ -30,23 +30,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Formulaire de contact
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Récupération des valeurs du formulaire
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
-        
-        // Simulation d'envoi (à remplacer par votre logique d'envoi réelle)
-        alert(`Merci ${name} ! Votre message a été envoyé avec succès.`);
-        contactForm.reset();
-    });
-}
-
 // Animation au défilement
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
